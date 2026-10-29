@@ -1,0 +1,453 @@
+{
+  "formatVersion": 1,
+  "name": "Fase 1 · Luz + LED",
+  "parts": [
+    {
+      "id": "c_3db5a6a5",
+      "type": "111211",
+      "x": 440,
+      "y": 200,
+      "angle": 0,
+      "props": {
+        "name": "1"
+      }
+    },
+    {
+      "id": "U1",
+      "type": "132521",
+      "x": 60,
+      "y": 420,
+      "angle": 0,
+      "props": {
+        "name": "U1"
+      }
+    },
+    {
+      "id": "c_6da4a68c",
+      "type": "116691",
+      "x": 473,
+      "y": 224,
+      "angle": 0,
+      "props": {
+        "name": "R1",
+        "level": 0.05,
+        "resistance": 10000
+      }
+    },
+    {
+      "id": "c_296c90dd",
+      "type": "53184",
+      "x": 485,
+      "y": 281,
+      "angle": 0,
+      "props": {
+        "name": "R2",
+        "resistance": 10000,
+        "resistancePrefix": "k"
+      }
+    },
+    {
+      "id": "c_57cfe507",
+      "type": "53184",
+      "x": 575,
+      "y": 281,
+      "angle": 0,
+      "props": {
+        "name": "R3",
+        "resistance": 220,
+        "resistancePrefix": "none"
+      }
+    },
+    {
+      "id": "c_2f8543b1",
+      "type": "58422",
+      "x": 566,
+      "y": 222,
+      "angle": 0,
+      "props": {
+        "name": "D1",
+        "forward": 1.95,
+        "color": "yellow"
+      }
+    }
+  ],
+  "wires": [
+    {
+      "id": "w_d82a3a06",
+      "from": {
+        "part": "U1",
+        "pin": "5V"
+      },
+      "to": {
+        "part": "c_3db5a6a5",
+        "pin": "rail3-1"
+      },
+      "points": [
+        {
+          "x": 237,
+          "y": 638
+        },
+        {
+          "x": 471,
+          "y": 638
+        }
+      ],
+      "color": "red",
+      "style": "normal"
+    },
+    {
+      "id": "w_efe61611",
+      "from": {
+        "part": "U1",
+        "pin": "GND2"
+      },
+      "to": {
+        "part": "c_3db5a6a5",
+        "pin": "rail2-2"
+      },
+      "points": [
+        {
+          "x": 257,
+          "y": 644
+        },
+        {
+          "x": 481,
+          "y": 644
+        }
+      ],
+      "color": "black",
+      "style": "normal"
+    },
+    {
+      "id": "w_bcfcbe59",
+      "from": {
+        "part": "c_3db5a6a5",
+        "pin": "rail3-29"
+      },
+      "to": {
+        "part": "c_3db5a6a5",
+        "pin": "rail1-29"
+      },
+      "points": [],
+      "color": "red",
+      "style": "normal"
+    },
+    {
+      "id": "w_819b24aa",
+      "from": {
+        "part": "c_3db5a6a5",
+        "pin": "rail2-28"
+      },
+      "to": {
+        "part": "c_3db5a6a5",
+        "pin": "rail0-28"
+      },
+      "points": [],
+      "color": "black",
+      "style": "normal"
+    },
+    {
+      "id": "w_c926aecd",
+      "from": {
+        "part": "c_3db5a6a5",
+        "pin": "i3"
+      },
+      "to": {
+        "part": "c_3db5a6a5",
+        "pin": "rail1-0"
+      },
+      "points": [
+        {
+          "x": 461,
+          "y": 262
+        }
+      ],
+      "color": "red",
+      "style": "normal"
+    },
+    {
+      "id": "w_92c2697d",
+      "from": {
+        "part": "c_3db5a6a5",
+        "pin": "b4"
+      },
+      "to": {
+        "part": "c_3db5a6a5",
+        "pin": "rail2-3"
+      },
+      "points": [],
+      "color": "black",
+      "style": "normal"
+    },
+    {
+      "id": "w_43f09db1",
+      "from": {
+        "part": "U1",
+        "pin": "A0"
+      },
+      "to": {
+        "part": "c_3db5a6a5",
+        "pin": "h4"
+      },
+      "points": [
+        {
+          "x": 287,
+          "y": 650
+        },
+        {
+          "x": 479,
+          "y": 650
+        },
+        {
+          "x": 479,
+          "y": 272
+        }
+      ],
+      "color": "yellow",
+      "style": "normal"
+    },
+    {
+      "id": "w_223bd1d1",
+      "from": {
+        "part": "c_3db5a6a5",
+        "pin": "i12"
+      },
+      "to": {
+        "part": "c_3db5a6a5",
+        "pin": "rail0-11"
+      },
+      "points": [
+        {
+          "x": 560,
+          "y": 262
+        },
+        {
+          "x": 560,
+          "y": 212
+        }
+      ],
+      "color": "black",
+      "style": "normal"
+    },
+    {
+      "id": "w_1a46d122",
+      "from": {
+        "part": "U1",
+        "pin": "D5"
+      },
+      "to": {
+        "part": "c_3db5a6a5",
+        "pin": "a13"
+      },
+      "points": [
+        {
+          "x": 287,
+          "y": 414
+        },
+        {
+          "x": 581,
+          "y": 414
+        }
+      ],
+      "color": "orange",
+      "style": "normal"
+    }
+  ],
+  "notes": [],
+  "programs": {
+    "U1": {
+      "mode": "Blocks + Text",
+      "blocks": {
+        "blocks": {
+          "languageVersion": 0,
+          "blocks": [
+            {
+              "type": "control_on_start",
+              "id": "start",
+              "inputs": {
+                "DO": {
+                  "block": {
+                    "type": "data_setvariableto",
+                    "id": "umbral",
+                    "fields": {
+                      "VARIABLE": {
+                        "id": "var_umbralLuz"
+                      }
+                    },
+                    "inputs": {
+                      "VALUE": {
+                        "shadow": {
+                          "type": "math_number",
+                          "fields": {
+                            "NUM": 300
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "x": 20,
+              "y": 20
+            },
+            {
+              "type": "control_forever",
+              "id": "loop",
+              "inputs": {
+                "DO": {
+                  "block": {
+                    "type": "data_setvariableto",
+                    "id": "leer",
+                    "fields": {
+                      "VARIABLE": {
+                        "id": "var_luz"
+                      }
+                    },
+                    "inputs": {
+                      "VALUE": {
+                        "block": {
+                          "type": "input_read_analog",
+                          "fields": {
+                            "PIN": "A0"
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "output_print_serial",
+                        "fields": {
+                          "NEWLINE": "NO"
+                        },
+                        "inputs": {
+                          "STRING": {
+                            "shadow": {
+                              "type": "common_text",
+                              "fields": {
+                                "TEXT": "Luz: "
+                              }
+                            }
+                          }
+                        },
+                        "next": {
+                          "block": {
+                            "type": "output_print_serial",
+                            "id": "print",
+                            "fields": {
+                              "NEWLINE": "YES"
+                            },
+                            "inputs": {
+                              "STRING": {
+                                "block": {
+                                  "type": "data_variable",
+                                  "fields": {
+                                    "VARIABLE": {
+                                      "id": "var_luz"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "next": {
+                              "block": {
+                                "type": "control_if_else",
+                                "id": "si",
+                                "inputs": {
+                                  "CONDITION": {
+                                    "block": {
+                                      "type": "math_compare",
+                                      "fields": {
+                                        "OP": "LT"
+                                      },
+                                      "inputs": {
+                                        "A": {
+                                          "block": {
+                                            "type": "data_variable",
+                                            "fields": {
+                                              "VARIABLE": {
+                                                "id": "var_luz"
+                                              }
+                                            }
+                                          }
+                                        },
+                                        "B": {
+                                          "block": {
+                                            "type": "data_variable",
+                                            "fields": {
+                                              "VARIABLE": {
+                                                "id": "var_umbralLuz"
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "DO": {
+                                    "block": {
+                                      "type": "output_set_digital_pin",
+                                      "id": "led_on",
+                                      "fields": {
+                                        "PIN": "5",
+                                        "VALUE": "HIGH"
+                                      }
+                                    }
+                                  },
+                                  "ELSE": {
+                                    "block": {
+                                      "type": "output_set_digital_pin",
+                                      "id": "led_off",
+                                      "fields": {
+                                        "PIN": "5",
+                                        "VALUE": "LOW"
+                                      }
+                                    }
+                                  }
+                                },
+                                "next": {
+                                  "block": {
+                                    "type": "control_wait_seconds",
+                                    "fields": {
+                                      "UNITS": "MS"
+                                    },
+                                    "inputs": {
+                                      "DURATION": {
+                                        "shadow": {
+                                          "type": "math_positive_number",
+                                          "fields": {
+                                            "NUM": 300
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "x": 20,
+              "y": 108
+            }
+          ]
+        },
+        "variables": [
+          {
+            "name": "luz",
+            "id": "var_luz"
+          },
+          {
+            "name": "umbralLuz",
+            "id": "var_umbralLuz"
+          }
+        ]
+      },
+      "source": ""
+    }
+  }
+}

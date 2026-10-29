@@ -1,0 +1,442 @@
+{
+  "formatVersion": 1,
+  "name": "Pantalla LCD I2C",
+  "parts": [
+    {
+      "id": "c_7557a5c3",
+      "type": "111211",
+      "x": 440,
+      "y": 200,
+      "angle": 0,
+      "props": {
+        "name": "1"
+      }
+    },
+    {
+      "id": "U1",
+      "type": "132521",
+      "x": 60,
+      "y": 420,
+      "angle": 0,
+      "props": {
+        "name": "U1"
+      }
+    },
+    {
+      "id": "c_f26dedc2",
+      "type": "displayLCD16x2I2C",
+      "x": 430,
+      "y": 470,
+      "angle": 0,
+      "props": {
+        "name": "U2",
+        "address": 39,
+        "type": "PCF8574"
+      }
+    }
+  ],
+  "wires": [
+    {
+      "id": "w_41d9a7b4",
+      "from": {
+        "part": "U1",
+        "pin": "5V"
+      },
+      "to": {
+        "part": "c_7557a5c3",
+        "pin": "rail3-1"
+      },
+      "points": [
+        {
+          "x": 237,
+          "y": 638
+        },
+        {
+          "x": 424,
+          "y": 638
+        },
+        {
+          "x": 424,
+          "y": 402
+        }
+      ],
+      "color": "red",
+      "style": "normal"
+    },
+    {
+      "id": "w_60296749",
+      "from": {
+        "part": "U1",
+        "pin": "GND2"
+      },
+      "to": {
+        "part": "c_7557a5c3",
+        "pin": "rail2-2"
+      },
+      "points": [
+        {
+          "x": 257,
+          "y": 644
+        },
+        {
+          "x": 418,
+          "y": 644
+        },
+        {
+          "x": 418,
+          "y": 392
+        }
+      ],
+      "color": "black",
+      "style": "normal"
+    },
+    {
+      "id": "w_3ea589e6",
+      "from": {
+        "part": "c_7557a5c3",
+        "pin": "rail3-29"
+      },
+      "to": {
+        "part": "c_7557a5c3",
+        "pin": "rail1-29"
+      },
+      "points": [],
+      "color": "red",
+      "style": "normal"
+    },
+    {
+      "id": "w_f7f36675",
+      "from": {
+        "part": "c_7557a5c3",
+        "pin": "rail2-28"
+      },
+      "to": {
+        "part": "c_7557a5c3",
+        "pin": "rail0-28"
+      },
+      "points": [],
+      "color": "black",
+      "style": "normal"
+    },
+    {
+      "id": "w_0b5f8911",
+      "from": {
+        "part": "c_f26dedc2",
+        "pin": "VCC"
+      },
+      "to": {
+        "part": "c_7557a5c3",
+        "pin": "rail3-22"
+      },
+      "points": [
+        {
+          "x": 412,
+          "y": 506
+        },
+        {
+          "x": 412,
+          "y": 408
+        },
+        {
+          "x": 681,
+          "y": 408
+        }
+      ],
+      "color": "red",
+      "style": "normal"
+    },
+    {
+      "id": "w_5dc36ef4",
+      "from": {
+        "part": "c_f26dedc2",
+        "pin": "GND"
+      },
+      "to": {
+        "part": "c_7557a5c3",
+        "pin": "rail2-21"
+      },
+      "points": [
+        {
+          "x": 406,
+          "y": 496
+        },
+        {
+          "x": 406,
+          "y": 396
+        },
+        {
+          "x": 671,
+          "y": 396
+        }
+      ],
+      "color": "black",
+      "style": "normal"
+    },
+    {
+      "id": "w_5aac8ab1",
+      "from": {
+        "part": "U1",
+        "pin": "A4"
+      },
+      "to": {
+        "part": "c_f26dedc2",
+        "pin": "SDA"
+      },
+      "points": [
+        {
+          "x": 327,
+          "y": 650
+        },
+        {
+          "x": 412,
+          "y": 650
+        },
+        {
+          "x": 412,
+          "y": 516
+        }
+      ],
+      "color": "blue",
+      "style": "normal"
+    },
+    {
+      "id": "w_55f94e16",
+      "from": {
+        "part": "U1",
+        "pin": "A5"
+      },
+      "to": {
+        "part": "c_f26dedc2",
+        "pin": "SCL"
+      },
+      "points": [
+        {
+          "x": 337,
+          "y": 656
+        },
+        {
+          "x": 406,
+          "y": 656
+        },
+        {
+          "x": 406,
+          "y": 526
+        }
+      ],
+      "color": "green",
+      "style": "normal"
+    }
+  ],
+  "notes": [],
+  "programs": {
+    "U1": {
+      "mode": "Blocks + Text",
+      "blocks": {
+        "blocks": {
+          "languageVersion": 0,
+          "blocks": [
+            {
+              "type": "control_on_start",
+              "id": "start",
+              "inputs": {
+                "DO": {
+                  "block": {
+                    "type": "output_lcd_configure",
+                    "id": "lcd",
+                    "fields": {
+                      "index": "1",
+                      "type": "PCF8574",
+                      "address": "39",
+                      "rs": "12",
+                      "e": "11",
+                      "db4": "5",
+                      "db5": "4",
+                      "db6": "3",
+                      "db7": "2"
+                    },
+                    "next": {
+                      "block": {
+                        "type": "output_lcd_action",
+                        "fields": {
+                          "index": "1",
+                          "action": "backlightOn"
+                        },
+                        "next": {
+                          "block": {
+                            "type": "output_lcd_set_position",
+                            "fields": {
+                              "index": "1"
+                            },
+                            "inputs": {
+                              "x": {
+                                "shadow": {
+                                  "type": "math_number",
+                                  "fields": {
+                                    "NUM": 0
+                                  }
+                                }
+                              },
+                              "y": {
+                                "shadow": {
+                                  "type": "math_number",
+                                  "fields": {
+                                    "NUM": 0
+                                  }
+                                }
+                              }
+                            },
+                            "next": {
+                              "block": {
+                                "type": "output_lcd_print",
+                                "id": "hola",
+                                "fields": {
+                                  "index": "1"
+                                },
+                                "inputs": {
+                                  "text": {
+                                    "shadow": {
+                                      "type": "common_text",
+                                      "fields": {
+                                        "TEXT": "Hola, maker!"
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "x": 20,
+              "y": 20
+            },
+            {
+              "type": "control_forever",
+              "id": "loop",
+              "inputs": {
+                "DO": {
+                  "block": {
+                    "type": "output_lcd_set_position",
+                    "id": "cursor1",
+                    "fields": {
+                      "index": "1"
+                    },
+                    "inputs": {
+                      "x": {
+                        "shadow": {
+                          "type": "math_number",
+                          "fields": {
+                            "NUM": 0
+                          }
+                        }
+                      },
+                      "y": {
+                        "shadow": {
+                          "type": "math_number",
+                          "fields": {
+                            "NUM": 1
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "output_lcd_print",
+                        "fields": {
+                          "index": "1"
+                        },
+                        "inputs": {
+                          "text": {
+                            "shadow": {
+                              "type": "common_text",
+                              "fields": {
+                                "TEXT": "Segundos: "
+                              }
+                            }
+                          }
+                        },
+                        "next": {
+                          "block": {
+                            "type": "output_lcd_print",
+                            "id": "imprimir",
+                            "fields": {
+                              "index": "1"
+                            },
+                            "inputs": {
+                              "text": {
+                                "block": {
+                                  "type": "data_variable",
+                                  "fields": {
+                                    "VARIABLE": {
+                                      "id": "var_segundos"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "next": {
+                              "block": {
+                                "type": "control_wait_seconds",
+                                "fields": {
+                                  "UNITS": "S"
+                                },
+                                "inputs": {
+                                  "DURATION": {
+                                    "shadow": {
+                                      "type": "math_positive_number",
+                                      "fields": {
+                                        "NUM": 1
+                                      }
+                                    }
+                                  }
+                                },
+                                "next": {
+                                  "block": {
+                                    "type": "data_changevariableby",
+                                    "id": "sumar",
+                                    "fields": {
+                                      "VARIABLE": {
+                                        "id": "var_segundos"
+                                      }
+                                    },
+                                    "inputs": {
+                                      "VALUE": {
+                                        "shadow": {
+                                          "type": "math_number",
+                                          "fields": {
+                                            "NUM": 1
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "x": 20,
+              "y": 252
+            }
+          ]
+        },
+        "variables": [
+          {
+            "name": "segundos",
+            "id": "var_segundos"
+          }
+        ]
+      },
+      "source": ""
+    }
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "formatVersion": 1,
+  "name": "Buzzer de alerta",
+  "parts": [
+    {
+      "id": "c_f650e51e",
+      "type": "111211",
+      "x": 440,
+      "y": 200,
+      "angle": 0,
+      "props": {
+        "name": "1"
+      }
+    },
+    {
+      "id": "U1",
+      "type": "132521",
+      "x": 60,
+      "y": 420,
+      "angle": 0,
+      "props": {
+        "name": "U1"
+      }
+    },
+    {
+      "id": "c_e0d47da1",
+      "type": "114067",
+      "x": 652,
+      "y": 158,
+      "angle": 0,
+      "props": {
+        "name": "PIEZO1",
+        "resistance": 1000
+      }
+    }
+  ],
+  "wires": [
+    {
+      "id": "w_e45c0d7d",
+      "from": {
+        "part": "U1",
+        "pin": "5V"
+      },
+      "to": {
+        "part": "c_f650e51e",
+        "pin": "rail3-1"
+      },
+      "points": [
+        {
+          "x": 237,
+          "y": 638
+        },
+        {
+          "x": 471,
+          "y": 638
+        }
+      ],
+      "color": "red",
+      "style": "normal"
+    },
+    {
+      "id": "w_0aa4d989",
+      "from": {
+        "part": "U1",
+        "pin": "GND2"
+      },
+      "to": {
+        "part": "c_f650e51e",
+        "pin": "rail2-2"
+      },
+      "points": [
+        {
+          "x": 257,
+          "y": 644
+        },
+        {
+          "x": 481,
+          "y": 644
+        }
+      ],
+      "color": "black",
+      "style": "normal"
+    },
+    {
+      "id": "w_17d23558",
+      "from": {
+        "part": "c_f650e51e",
+        "pin": "rail3-29"
+      },
+      "to": {
+        "part": "c_f650e51e",
+        "pin": "rail1-29"
+      },
+      "points": [],
+      "color": "red",
+      "style": "normal"
+    },
+    {
+      "id": "w_507c10f9",
+      "from": {
+        "part": "c_f650e51e",
+        "pin": "rail2-28"
+      },
+      "to": {
+        "part": "c_f650e51e",
+        "pin": "rail0-29"
+      },
+      "points": [
+        {
+          "x": 745,
+          "y": 392
+        },
+        {
+          "x": 745,
+          "y": 212
+        }
+      ],
+      "color": "black",
+      "style": "normal"
+    },
+    {
+      "id": "w_b1da8181",
+      "from": {
+        "part": "U1",
+        "pin": "D8"
+      },
+      "to": {
+        "part": "c_f650e51e",
+        "pin": "h22"
+      },
+      "points": [
+        {
+          "x": 251,
+          "y": 414
+        },
+        {
+          "x": 671,
+          "y": 414
+        }
+      ],
+      "color": "purple",
+      "style": "normal"
+    },
+    {
+      "id": "w_02d293df",
+      "from": {
+        "part": "c_f650e51e",
+        "pin": "i27"
+      },
+      "to": {
+        "part": "c_f650e51e",
+        "pin": "rail0-18"
+      },
+      "points": [
+        {
+          "x": 641,
+          "y": 262
+        }
+      ],
+      "color": "black",
+      "style": "normal"
+    }
+  ],
+  "notes": [],
+  "programs": {
+    "U1": {
+      "mode": "Blocks + Text",
+      "blocks": {
+        "blocks": {
+          "languageVersion": 0,
+          "blocks": [
+            {
+              "type": "control_forever",
+              "id": "loop",
+              "inputs": {
+                "DO": {
+                  "block": {
+                    "type": "output_play_tone",
+                    "id": "tono",
+                    "fields": {
+                      "PIN": "8"
+                    },
+                    "inputs": {
+                      "NOTE": {
+                        "shadow": {
+                          "type": "math_positive_number",
+                          "fields": {
+                            "NUM": 71
+                          }
+                        }
+                      },
+                      "DURATION": {
+                        "shadow": {
+                          "type": "math_positive_number",
+                          "fields": {
+                            "NUM": 0.3
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "control_wait_seconds",
+                        "id": "espera",
+                        "fields": {
+                          "UNITS": "S"
+                        },
+                        "inputs": {
+                          "DURATION": {
+                            "shadow": {
+                              "type": "math_positive_number",
+                              "fields": {
+                                "NUM": 1
+                              }
+                            }
+                          }
+                        },
+                        "next": {
+                          "block": {
+                            "type": "output_stop_tone",
+                            "id": "silencio",
+                            "fields": {
+                              "PIN": "8"
+                            },
+                            "next": {
+                              "block": {
+                                "type": "control_wait_seconds",
+                                "fields": {
+                                  "UNITS": "S"
+                                },
+                                "inputs": {
+                                  "DURATION": {
+                                    "shadow": {
+                                      "type": "math_positive_number",
+                                      "fields": {
+                                        "NUM": 1
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "x": 20,
+              "y": 20
+            }
+          ]
+        },
+        "variables": []
+      },
+      "source": ""
+    }
+  }
+}

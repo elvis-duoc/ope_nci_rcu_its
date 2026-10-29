@@ -1,0 +1,813 @@
+{
+  "formatVersion": 1,
+  "name": "Fase 2 · Distancia + semáforo",
+  "parts": [
+    {
+      "id": "c_fe670394",
+      "type": "111211",
+      "x": 440,
+      "y": 200,
+      "angle": 0,
+      "props": {
+        "name": "1"
+      }
+    },
+    {
+      "id": "U1",
+      "type": "132521",
+      "x": 60,
+      "y": 420,
+      "angle": 0,
+      "props": {
+        "name": "U1"
+      }
+    },
+    {
+      "id": "c_6ae0db6a",
+      "type": "116691",
+      "x": 473,
+      "y": 224,
+      "angle": 0,
+      "props": {
+        "name": "R1",
+        "level": 0.05,
+        "resistance": 10000
+      }
+    },
+    {
+      "id": "c_edd0602e",
+      "type": "53184",
+      "x": 485,
+      "y": 281,
+      "angle": 0,
+      "props": {
+        "name": "R2",
+        "resistance": 10000,
+        "resistancePrefix": "k"
+      }
+    },
+    {
+      "id": "c_e0b8eb79",
+      "type": "53184",
+      "x": 535,
+      "y": 281,
+      "angle": 0,
+      "props": {
+        "name": "R3",
+        "resistance": 220,
+        "resistancePrefix": "none"
+      }
+    },
+    {
+      "id": "c_37f3345e",
+      "type": "58422",
+      "x": 526,
+      "y": 222,
+      "angle": 0,
+      "props": {
+        "name": "D1",
+        "forward": 2.2,
+        "color": "green"
+      }
+    },
+    {
+      "id": "c_a314337b",
+      "type": "53184",
+      "x": 575,
+      "y": 281,
+      "angle": 0,
+      "props": {
+        "name": "R4",
+        "resistance": 220,
+        "resistancePrefix": "none"
+      }
+    },
+    {
+      "id": "c_03967b15",
+      "type": "58422",
+      "x": 566,
+      "y": 222,
+      "angle": 0,
+      "props": {
+        "name": "D2",
+        "forward": 1.95,
+        "color": "yellow"
+      }
+    },
+    {
+      "id": "c_d5650b16",
+      "type": "53184",
+      "x": 615,
+      "y": 281,
+      "angle": 0,
+      "props": {
+        "name": "R5",
+        "resistance": 220,
+        "resistancePrefix": "none"
+      }
+    },
+    {
+      "id": "c_1243e4af",
+      "type": "58422",
+      "x": 606,
+      "y": 222,
+      "angle": 0,
+      "props": {
+        "name": "D3",
+        "forward": 1.8,
+        "color": "red"
+      }
+    },
+    {
+      "id": "c_542612bb",
+      "type": "219295",
+      "x": 800,
+      "y": 170,
+      "angle": 0,
+      "props": {
+        "name": "DIST1",
+        "level": 0,
+        "targetX": 0,
+        "targetY": -143
+      }
+    }
+  ],
+  "wires": [
+    {
+      "id": "w_76d8cb02",
+      "from": {
+        "part": "U1",
+        "pin": "5V"
+      },
+      "to": {
+        "part": "c_fe670394",
+        "pin": "rail3-1"
+      },
+      "points": [
+        {
+          "x": 237,
+          "y": 638
+        },
+        {
+          "x": 471,
+          "y": 638
+        }
+      ],
+      "color": "red",
+      "style": "normal"
+    },
+    {
+      "id": "w_d62f457f",
+      "from": {
+        "part": "U1",
+        "pin": "GND2"
+      },
+      "to": {
+        "part": "c_fe670394",
+        "pin": "rail2-2"
+      },
+      "points": [
+        {
+          "x": 257,
+          "y": 644
+        },
+        {
+          "x": 481,
+          "y": 644
+        }
+      ],
+      "color": "black",
+      "style": "normal"
+    },
+    {
+      "id": "w_a5c2a1ef",
+      "from": {
+        "part": "c_fe670394",
+        "pin": "rail3-29"
+      },
+      "to": {
+        "part": "c_fe670394",
+        "pin": "rail1-29"
+      },
+      "points": [],
+      "color": "red",
+      "style": "normal"
+    },
+    {
+      "id": "w_ad9ef93c",
+      "from": {
+        "part": "c_fe670394",
+        "pin": "rail2-28"
+      },
+      "to": {
+        "part": "c_fe670394",
+        "pin": "rail0-28"
+      },
+      "points": [],
+      "color": "black",
+      "style": "normal"
+    },
+    {
+      "id": "w_3a61e844",
+      "from": {
+        "part": "c_fe670394",
+        "pin": "i3"
+      },
+      "to": {
+        "part": "c_fe670394",
+        "pin": "rail1-0"
+      },
+      "points": [
+        {
+          "x": 461,
+          "y": 262
+        }
+      ],
+      "color": "red",
+      "style": "normal"
+    },
+    {
+      "id": "w_ea269c51",
+      "from": {
+        "part": "c_fe670394",
+        "pin": "b4"
+      },
+      "to": {
+        "part": "c_fe670394",
+        "pin": "rail2-3"
+      },
+      "points": [],
+      "color": "black",
+      "style": "normal"
+    },
+    {
+      "id": "w_bd9c4c89",
+      "from": {
+        "part": "U1",
+        "pin": "A0"
+      },
+      "to": {
+        "part": "c_fe670394",
+        "pin": "h4"
+      },
+      "points": [
+        {
+          "x": 287,
+          "y": 650
+        },
+        {
+          "x": 479,
+          "y": 650
+        },
+        {
+          "x": 479,
+          "y": 272
+        }
+      ],
+      "color": "yellow",
+      "style": "normal"
+    },
+    {
+      "id": "w_ca83a6ef",
+      "from": {
+        "part": "c_fe670394",
+        "pin": "i8"
+      },
+      "to": {
+        "part": "c_fe670394",
+        "pin": "rail0-7"
+      },
+      "points": [
+        {
+          "x": 520,
+          "y": 262
+        },
+        {
+          "x": 520,
+          "y": 212
+        }
+      ],
+      "color": "black",
+      "style": "normal"
+    },
+    {
+      "id": "w_cc1bbb38",
+      "from": {
+        "part": "U1",
+        "pin": "D4"
+      },
+      "to": {
+        "part": "c_fe670394",
+        "pin": "a9"
+      },
+      "points": [
+        {
+          "x": 297,
+          "y": 414
+        },
+        {
+          "x": 541,
+          "y": 414
+        }
+      ],
+      "color": "green",
+      "style": "normal"
+    },
+    {
+      "id": "w_4f1ffa67",
+      "from": {
+        "part": "c_fe670394",
+        "pin": "i12"
+      },
+      "to": {
+        "part": "c_fe670394",
+        "pin": "rail0-11"
+      },
+      "points": [
+        {
+          "x": 560,
+          "y": 262
+        },
+        {
+          "x": 560,
+          "y": 212
+        }
+      ],
+      "color": "black",
+      "style": "normal"
+    },
+    {
+      "id": "w_4b1d8ae4",
+      "from": {
+        "part": "U1",
+        "pin": "D5"
+      },
+      "to": {
+        "part": "c_fe670394",
+        "pin": "a13"
+      },
+      "points": [
+        {
+          "x": 287,
+          "y": 362
+        }
+      ],
+      "color": "orange",
+      "style": "normal"
+    },
+    {
+      "id": "w_16681808",
+      "from": {
+        "part": "c_fe670394",
+        "pin": "i16"
+      },
+      "to": {
+        "part": "c_fe670394",
+        "pin": "rail0-15"
+      },
+      "points": [
+        {
+          "x": 600,
+          "y": 262
+        },
+        {
+          "x": 600,
+          "y": 212
+        }
+      ],
+      "color": "black",
+      "style": "normal"
+    },
+    {
+      "id": "w_d537155f",
+      "from": {
+        "part": "U1",
+        "pin": "D6"
+      },
+      "to": {
+        "part": "c_fe670394",
+        "pin": "a17"
+      },
+      "points": [
+        {
+          "x": 277,
+          "y": 368
+        },
+        {
+          "x": 621,
+          "y": 368
+        }
+      ],
+      "color": "red",
+      "style": "normal"
+    },
+    {
+      "id": "w_be0ae44c",
+      "from": {
+        "part": "c_542612bb",
+        "pin": "VCC"
+      },
+      "to": {
+        "part": "c_fe670394",
+        "pin": "rail1-27"
+      },
+      "points": [
+        {
+          "x": 876,
+          "y": 280
+        },
+        {
+          "x": 731,
+          "y": 280
+        }
+      ],
+      "color": "red",
+      "style": "normal"
+    },
+    {
+      "id": "w_9a8012d8",
+      "from": {
+        "part": "c_542612bb",
+        "pin": "GND"
+      },
+      "to": {
+        "part": "c_fe670394",
+        "pin": "rail0-26"
+      },
+      "points": [
+        {
+          "x": 906,
+          "y": 286
+        },
+        {
+          "x": 721,
+          "y": 286
+        }
+      ],
+      "color": "black",
+      "style": "normal"
+    },
+    {
+      "id": "w_5c72a0a2",
+      "from": {
+        "part": "U1",
+        "pin": "D9"
+      },
+      "to": {
+        "part": "c_542612bb",
+        "pin": "TRIG"
+      },
+      "points": [
+        {
+          "x": 241,
+          "y": 329
+        },
+        {
+          "x": 886,
+          "y": 329
+        }
+      ],
+      "color": "orange",
+      "style": "normal"
+    },
+    {
+      "id": "w_1df6552a",
+      "from": {
+        "part": "U1",
+        "pin": "D10"
+      },
+      "to": {
+        "part": "c_542612bb",
+        "pin": "ECHO"
+      },
+      "points": [
+        {
+          "x": 231,
+          "y": 335
+        },
+        {
+          "x": 896,
+          "y": 335
+        }
+      ],
+      "color": "green",
+      "style": "normal"
+    }
+  ],
+  "notes": [],
+  "programs": {
+    "U1": {
+      "mode": "Blocks + Text",
+      "blocks": {
+        "blocks": {
+          "languageVersion": 0,
+          "blocks": [
+            {
+              "type": "control_on_start",
+              "id": "start",
+              "inputs": {
+                "DO": {
+                  "block": {
+                    "type": "data_setvariableto",
+                    "id": "umbrales",
+                    "fields": {
+                      "VARIABLE": {
+                        "id": "var_umbralDist"
+                      }
+                    },
+                    "inputs": {
+                      "VALUE": {
+                        "shadow": {
+                          "type": "math_number",
+                          "fields": {
+                            "NUM": 10
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "data_setvariableto",
+                        "fields": {
+                          "VARIABLE": {
+                            "id": "var_distPrecaucion"
+                          }
+                        },
+                        "inputs": {
+                          "VALUE": {
+                            "shadow": {
+                              "type": "math_number",
+                              "fields": {
+                                "NUM": 30
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "x": 20,
+              "y": 20
+            },
+            {
+              "type": "control_forever",
+              "id": "loop",
+              "inputs": {
+                "DO": {
+                  "block": {
+                    "type": "data_setvariableto",
+                    "id": "leer",
+                    "fields": {
+                      "VARIABLE": {
+                        "id": "var_distancia"
+                      }
+                    },
+                    "inputs": {
+                      "VALUE": {
+                        "block": {
+                          "type": "input_read_ultrasonic_distance",
+                          "fields": {
+                            "PIN": "9",
+                            "UNITS": "CM",
+                            "ECHO": "10"
+                          }
+                        }
+                      }
+                    },
+                    "next": {
+                      "block": {
+                        "type": "output_print_serial",
+                        "fields": {
+                          "NEWLINE": "NO"
+                        },
+                        "inputs": {
+                          "STRING": {
+                            "shadow": {
+                              "type": "common_text",
+                              "fields": {
+                                "TEXT": "Distancia: "
+                              }
+                            }
+                          }
+                        },
+                        "next": {
+                          "block": {
+                            "type": "output_print_serial",
+                            "fields": {
+                              "NEWLINE": "NO"
+                            },
+                            "inputs": {
+                              "STRING": {
+                                "block": {
+                                  "type": "data_variable",
+                                  "fields": {
+                                    "VARIABLE": {
+                                      "id": "var_distancia"
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "next": {
+                              "block": {
+                                "type": "output_print_serial",
+                                "fields": {
+                                  "NEWLINE": "YES"
+                                },
+                                "inputs": {
+                                  "STRING": {
+                                    "shadow": {
+                                      "type": "common_text",
+                                      "fields": {
+                                        "TEXT": " cm"
+                                      }
+                                    }
+                                  }
+                                },
+                                "next": {
+                                  "block": {
+                                    "type": "output_set_digital_pin",
+                                    "id": "apagar",
+                                    "fields": {
+                                      "PIN": "4",
+                                      "VALUE": "LOW"
+                                    },
+                                    "next": {
+                                      "block": {
+                                        "type": "output_set_digital_pin",
+                                        "fields": {
+                                          "PIN": "5",
+                                          "VALUE": "LOW"
+                                        },
+                                        "next": {
+                                          "block": {
+                                            "type": "output_set_digital_pin",
+                                            "fields": {
+                                              "PIN": "6",
+                                              "VALUE": "LOW"
+                                            },
+                                            "next": {
+                                              "block": {
+                                                "type": "control_if_else",
+                                                "id": "si",
+                                                "inputs": {
+                                                  "CONDITION": {
+                                                    "block": {
+                                                      "type": "math_compare",
+                                                      "fields": {
+                                                        "OP": "LT"
+                                                      },
+                                                      "inputs": {
+                                                        "A": {
+                                                          "block": {
+                                                            "type": "data_variable",
+                                                            "fields": {
+                                                              "VARIABLE": {
+                                                                "id": "var_distancia"
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "B": {
+                                                          "block": {
+                                                            "type": "data_variable",
+                                                            "fields": {
+                                                              "VARIABLE": {
+                                                                "id": "var_umbralDist"
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "DO": {
+                                                    "block": {
+                                                      "type": "output_set_digital_pin",
+                                                      "id": "rojo",
+                                                      "fields": {
+                                                        "PIN": "6",
+                                                        "VALUE": "HIGH"
+                                                      }
+                                                    }
+                                                  },
+                                                  "ELSE": {
+                                                    "block": {
+                                                      "type": "control_if_else",
+                                                      "id": "si_precaucion",
+                                                      "inputs": {
+                                                        "CONDITION": {
+                                                          "block": {
+                                                            "type": "math_compare",
+                                                            "fields": {
+                                                              "OP": "LTE"
+                                                            },
+                                                            "inputs": {
+                                                              "A": {
+                                                                "block": {
+                                                                  "type": "data_variable",
+                                                                  "fields": {
+                                                                    "VARIABLE": {
+                                                                      "id": "var_distancia"
+                                                                    }
+                                                                  }
+                                                                }
+                                                              },
+                                                              "B": {
+                                                                "block": {
+                                                                  "type": "data_variable",
+                                                                  "fields": {
+                                                                    "VARIABLE": {
+                                                                      "id": "var_distPrecaucion"
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        },
+                                                        "DO": {
+                                                          "block": {
+                                                            "type": "output_set_digital_pin",
+                                                            "id": "amarillo",
+                                                            "fields": {
+                                                              "PIN": "5",
+                                                              "VALUE": "HIGH"
+                                                            }
+                                                          }
+                                                        },
+                                                        "ELSE": {
+                                                          "block": {
+                                                            "type": "output_set_digital_pin",
+                                                            "id": "verde",
+                                                            "fields": {
+                                                              "PIN": "4",
+                                                              "VALUE": "HIGH"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "next": {
+                                                  "block": {
+                                                    "type": "control_wait_seconds",
+                                                    "fields": {
+                                                      "UNITS": "MS"
+                                                    },
+                                                    "inputs": {
+                                                      "DURATION": {
+                                                        "shadow": {
+                                                          "type": "math_positive_number",
+                                                          "fields": {
+                                                            "NUM": 300
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "x": 20,
+              "y": 156
+            }
+          ]
+        },
+        "variables": [
+          {
+            "name": "distancia",
+            "id": "var_distancia"
+          },
+          {
+            "name": "umbralDist",
+            "id": "var_umbralDist"
+          },
+          {
+            "name": "distPrecaucion",
+            "id": "var_distPrecaucion"
+          }
+        ]
+      },
+      "source": ""
+    }
+  }
+}
